@@ -16,7 +16,7 @@ window.addEventListener("DOMContentLoaded", () => {
     headerMenuIcon.addEventListener("click", addRemoveMyClass);
 
     function addRemoveMyClass() {
-        if (headerMenuIcon.classList.contains('_exit')) { // проверяю есть он или нет
+        if (headerMenuIcon.classList.contains('_exit')) {
             headerMenuIcon.classList.remove('_exit');
             headerMenuNavigation.classList.remove('_active');
         } else {
@@ -31,8 +31,8 @@ window.addEventListener("DOMContentLoaded", () => {
     //‾‾‾‾‾‾‾‾‾‾cadrs‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾\
 
     // получаю элементы
-    const togglersDown = document.querySelectorAll(".card__more"); // - псевдомассив - переключатели с галочкой вниз
-    const togglersUp = document.querySelectorAll(".card__toggler"); // - псевдомассив - галочки вверх
+    const togglersDown = document.querySelectorAll(".card__more");
+    const togglersUp = document.querySelectorAll(".card__toggler");
 
 
     // перебираю, и для каждого элемента при клике.....
@@ -64,12 +64,12 @@ window.addEventListener("DOMContentLoaded", () => {
     // создаём класс-шаблон, чтобы потом делать отдельные экземпляры:
     class FooterBlock {
         constructor(bootstrapGrid, src, alt, href, title, description, parentSelector) {
-            this.bootstrapGrid = bootstrapGrid; // свойство
-            this.src = src; // свойство
-            this.alt = alt; // свойство
-            this.href = href; // свойство
-            this.title = title; // свойство
-            this.description = description; // свойство
+            this.bootstrapGrid = bootstrapGrid;
+            this.src = src;
+            this.alt = alt;
+            this.href = href;
+            this.title = title;
+            this.description = description;
             this.parent = document.querySelector(parentSelector); // свойство - в него будет передоватся родитель для блоков
         }
 
@@ -149,8 +149,8 @@ window.addEventListener("DOMContentLoaded", () => {
     //----------------------------------------------------
     // функция - открытие модального окна - обьявили
     function openModel() {
-        modal.classList.add("_show"); // модальному окну добавить класс ("show"-показать)
-        modal.classList.remove("_hide"); // модальному окну удалить класс ("hide"-скрыть)
+        modal.classList.add("_show");
+        modal.classList.remove("_hide");
 
         document.body.style.overflow = "hidden"; // отключить скролл-прокрутку сайта при открытом модальном окне
     }
@@ -166,13 +166,11 @@ window.addEventListener("DOMContentLoaded", () => {
     //-----------------------------------------------------
     // действия при клике на кнопку - из псевдомассива
     modalTrigger.forEach(button => {
-        button.addEventListener("click", openModel); // при клике передаём функцию
+        button.addEventListener("click", openModel);
     });
 
     // действия при клике на кнопку-закрыть в модальном окне
-    modalCloseBtn.addEventListener("click", closeModal); // при клике передаём функцию
-
-    //-----------------------------------------------------
+    modalCloseBtn.addEventListener("click", closeModal);
     //_______________________________________________________________________________________________________________________/
 
 });
