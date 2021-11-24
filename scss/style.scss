@@ -1,0 +1,539 @@
+@import "_main-style";
+
+// header-------------------------------------------------------------------------------------
+.header {
+    padding: 25px 0 50px 0;
+
+    &__main {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        position: relative;
+    }
+
+    &__logo {
+        font-weight: bold;
+        font-size: 27px;
+        @import "_my-elements-style";
+        @import "_my-links-style";
+        @media (max-width: $breakpointMD) {
+            width: 100%; // растянул
+            margin-right: 80%; // и ограничил, чтобы клик был только у логотипа
+        }
+    }
+
+    &__menu-icon {
+        display: none;
+        @media (max-width: $breakpointMD) {
+            cursor: pointer;
+            display: block;
+            width: 30px;
+            height: 30px;
+            margin: 5px 20px 0 0;
+            padding: 14px;
+            background-image: url(../img/header/menu.svg);
+            background-repeat: no-repeat;
+            position: absolute;
+            right: 0;
+            @import "_my-elements-style";
+        }
+    }
+
+    &__navigation {
+        display: flex;
+        gap: 40px;
+        align-items: center;
+        @media (max-width: $breakpointMD) {
+            flex-direction: column;
+            padding-top: 30px;
+            gap: 30px;
+            margin: 0 auto;
+            display: none; // скрыл
+        }
+    }
+
+    &__link {
+        @import "_my-links-style";
+        @media (max-width: $breakpointMD) {
+            font-size: 20px;
+        }
+    }
+
+    &__button {
+        color: #ffffff;
+        background-color: #ff7900;
+        border-radius: 10px;
+        padding: 10px 14px;
+        @import "_my-button-style";
+    }
+}
+
+// взаимодействие с JS
+._exit {
+    border-radius: 50%;
+    border: 1px solid red;
+    background-image: url(../img/header/exit.svg);
+    background-repeat: no-repeat;
+}
+
+// взаимодействие с JS
+._active {
+    display: flex; // восстановил обратно
+}
+
+// main------------------------------------------------------------------------------------
+
+// product------------------------------------------------------------------------------------
+.product {
+    &__title {
+        margin-top: 78px;
+        width: 85%;
+        font-weight: 500;
+        font-size: 72px;
+        &_green {
+            color: #5bc180;
+        }
+        @media (max-width: $breakpointXL) {
+            margin-top: 58px;
+        }
+        @media (max-width: $breakpointLG) {
+            text-align: center;
+            margin: 58px auto auto auto;
+        }
+        @media (max-width: $breakpointMD) {
+            margin-top: 50px;
+            font-size: 68px;
+        }
+    }
+
+    &__agence {
+        margin-bottom: 24px;
+        @media (max-width: $breakpointLG) {
+            display: block;
+            margin: auto auto 24px auto;
+        }
+    }
+
+    &__description {
+        line-height: 26px;
+        margin-bottom: 32px;
+    }
+
+    &__connections {
+        height: 204px;
+        width: 100%;
+        background: url(../img/product_bg_elements.png) no-repeat;
+        background-size: contain;
+    }
+
+    &__picture {
+        max-width: 100%;
+        margin-bottom: 50px;
+        @media (max-width: $breakpointLG) {
+            display: block;
+            margin: auto auto 50px auto;
+        }
+    }
+}
+
+.connection {
+    &__form {
+        width: 88%;
+        padding: 7px 13px 7px 30px;
+        background: $backgroundColorMain;
+        box-shadow: 0px 4px 39px -2px rgba(0, 0, 0, 0.25);
+        border-radius: 5px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @media (max-width: $breakpointLG) {
+            width: 100%;
+        }
+    }
+
+    &__icon {
+        font-weight: bold;
+    }
+
+    &__email-input {
+        margin: auto 20px;
+        width: 300px;
+        @media (max-width: $breakpointXL) {
+            width: 200px;
+        }
+        @media (max-width: $breakpointLG) {
+            width: 500px;
+        }
+        @media (max-width: $breakpointMD) {
+            width: 350px;
+        }
+        @media (max-width: $breakpointSM) {
+            margin: auto 10px;
+            width: 110px;
+        }
+    }
+
+    &__email-button {
+        color: #ffffff;
+        background: #ff7900;
+        border-radius: 5px;
+        padding: 10px 11px;
+        white-space: nowrap;
+        @import "_my-button-style";
+    }
+}
+
+// designers------------------------------------------------------------------------------------
+.designers {
+    margin-top: 80px;
+
+    &__title {
+        font-weight: 500;
+        font-size: 54px;
+        margin-bottom: 90px;
+        @media (max-width: $breakpointLG) {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+    }
+
+    &__description {
+        line-height: 26px;
+        margin-bottom: 30px;
+    }
+
+    &__cadrs {
+        background: url(../img/designers_bg.png) no-repeat;
+        background-size: 27%;
+        // margin-bottom: 50px;
+        padding: 60px 40px 90px 40px;
+        @media (max-width: $breakpointXL) {
+            background-size: auto;
+        }
+        @media (max-width: $breakpointMY320) {
+            padding: 30px 20px 50px 20px;
+        }
+    }
+}
+
+.card {
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    padding: 28px;
+    background-color: $backgroundColorMain;
+    margin-bottom: 27px;
+    @media (max-width: $breakpointMY320) {
+        padding: 15px;
+    }
+
+    &__icon {
+        display: block;
+        margin-bottom: 25px;
+    }
+
+    &__category {
+        color: #254ba8;
+        padding: 8px 10px;
+        border-radius: 10px;
+        white-space: nowrap;
+        &_blue {
+            background-color: #b6fffb;
+        }
+        &_purple {
+            background-color: #c9b6ff;
+        }
+        &_orange {
+            background-color: #ffefb6;
+        }
+        &_green {
+            background-color: #b9ffb6;
+        }
+    }
+
+    &__description {
+        line-height: 26px;
+        margin-top: 32px;
+        margin-bottom: 32px;
+    }
+
+    &__more {
+        display: inline-block;
+        cursor: pointer;
+        position: relative;
+        @import "_my-elements-style";
+        @import "_my-links-style";
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            right: -30px;
+            width: 25px;
+            height: 25px;
+            background-image: url(../img/designers_icon_down.svg);
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+    }
+
+    &__toggler {
+        cursor: pointer;
+        display: block;
+        width: 30px;
+        height: 30px;
+        background-image: url(../img/designers_icon_up.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        border-radius: 50%;
+        border: 1px solid red;
+        @import "_my-elements-style";
+    }
+
+    &__info {
+        display: none;
+    }
+
+    &__picture {
+        max-width: 100%;
+        margin-top: 32px;
+        border-radius: 10px;
+        margin-bottom: 12px;
+    }
+
+    &__sub-description {
+        line-height: 26px;
+    }
+}
+
+// busines-------------------------------------------------------------------------------------
+.busines {
+    &__title {
+        padding-top: 68px;
+        font-weight: 500;
+        font-size: 54px;
+        margin-bottom: 32px;
+        @media (max-width: $breakpointLG) {
+            text-align: center;
+        }
+    }
+
+    &__description {
+        line-height: 21px;
+        margin-bottom: 24px;
+        @media (max-width: $breakpointLG) {
+            text-align: left;
+        }
+    }
+
+    &__button {
+        color: #ffffff;
+        background-color: #ff7900;
+        border-radius: 10px;
+        padding: 9px 8px;
+        @import "_my-button-style";
+        @media (max-width: $breakpointLG) {
+            float: left;
+        }
+    }
+
+    &__picture {
+        max-width: 100%;
+    }
+    @media (max-width: $breakpointLG) {
+        text-align: center;
+        padding-bottom: 20px;
+    }
+}
+
+// creative-------------------------------------------------------------------------------------
+.creative {
+    margin-top: 100px;
+    padding-bottom: 78px;
+
+    &__block {
+        @media (max-width: $breakpointLG) {
+            display: flex;
+            flex-direction: column-reverse;
+        }
+    }
+
+    &__picture {
+        max-width: 100%;
+    }
+    @media (max-width: $breakpointLG) {
+        text-align: center;
+        padding-bottom: 90px;
+    }
+
+    &__title {
+        padding-top: 68px;
+        font-weight: 500;
+        font-size: 54px;
+        margin-bottom: 32px;
+        @media (max-width: $breakpointLG) {
+            text-align: center;
+        }
+    }
+
+    &__description {
+        line-height: 21px;
+        margin-bottom: 24px;
+        @media (max-width: $breakpointLG) {
+            text-align: left;
+        }
+    }
+
+    &__button {
+        color: #ffffff;
+        background-color: #ff7900;
+        border-radius: 10px;
+        padding: 9px 8px;
+        @import "_my-button-style";
+        @media (max-width: $breakpointLG) {
+            float: left;
+        }
+    }
+}
+
+// footer-------------------------------------------------------------------------------------
+.footer {
+    background: linear-gradient(93.76deg, #c8e7d0 3.23%, #c6c0a6 98.45%);
+    @media (max-width: $breakpointMY320) {
+        min-width: none;
+    }
+
+    &__information {
+        padding: 76px 50px 0px 50px;
+        @media (max-width: $breakpointMY320) {
+            background: linear-gradient(93.76deg, #c8e7d0 3.23%, #c6c0a6 98.45%);
+        }
+    }
+
+    &__title {
+        font-weight: 500;
+        font-size: 54px;
+        justify-content: center;
+        display: flex;
+        text-align: center;
+    }
+
+    &__description {
+        line-height: 21px;
+        text-align: center;
+        padding: 0 25%;
+        margin-bottom: 88px;
+        @media (max-width: $breakpointMD) {
+            padding: 0;
+        }
+    }
+
+    &__block {
+        margin: 0 auto;
+        width: 75%;
+        @media (max-width: $breakpointLG) {
+            width: 90%;
+        }
+    }
+
+    &__picture {
+        margin-bottom: 16px;
+    }
+
+    &__sub-title {
+        display: block;
+        font-weight: bold;
+        font-size: 18px;
+        margin-bottom: 16px;
+        width: 55%;
+        @import "_my-links-style";
+        @media (max-width: $breakpointLG) {
+            width: 90%;
+        }
+    }
+
+    &__sub-description {
+        line-height: 21px;
+        margin-bottom: 100px;
+    }
+}
+
+// modal-------------------------------------------------------------------------------------
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.9);
+
+    &__dialog {
+        max-width: 500px;
+        margin: 50px auto;
+    }
+
+    &__content {
+        position: relative;
+        width: 100%;
+        padding: 40px;
+        background-color: $backgroundColorMain;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
+        max-height: 80vh;
+        overflow-y: auto;
+    }
+
+    &__close {
+        position: absolute;
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+        top: 15px;
+        right: 15px;
+        background-image: url(../img/header/exit.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        border-radius: 50%;
+        border: 1px solid red;
+        @import "_my-elements-style";
+    }
+
+    &__title {
+        text-align: center;
+        font-size: 35px;
+        text-transform: uppercase;
+    }
+
+    &__input {
+        display: block;
+        margin: 20px auto 20px auto;
+        max-width: 100%;
+        height: 50px;
+        box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 10px;
+        text-align: center;
+        padding: 0 20px;
+        outline: 0; // когда активный input, это его цвет бордера
+    }
+
+    &__button {
+        display: block;
+        margin: auto;
+        color: #ffffff;
+        background-color: #ff7900;
+        border-radius: 10px;
+        padding: 9px 8px;
+        @import "_my-button-style";
+    }
+}
+
+// взаимодействие с JS
+._show {
+    display:block;
+}
+
+// взаимодействие с JS
+._hide {
+    display: none;
+}

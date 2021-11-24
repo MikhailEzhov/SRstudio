@@ -1,0 +1,69 @@
+@import "_variables";
+
+// обнуление
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    // outline: none;
+}
+
+
+
+// основные стили
+html,
+body {
+    height: 100%;
+    font-family: $fontFamilyMain;
+    font-weight: $fontWeightMain;
+    font-style: $fontStyleMain;
+    font-size: $fontSizeMain;
+    color: $fontColorMain;
+    background-color: $backgroundColorMain;
+    // position: relative;
+    // overflow-x: hidden;
+}
+
+// самая верхняя обертка
+.wrapper {
+    min-height: 100%;
+}
+
+// контент
+.container {
+    max-width: $maxWidthContent;
+    margin: 0 auto;
+    padding: 0px 10px;
+    min-width: $minWidthContent;
+}
+
+// для выделения текста
+::selection {
+    color: $backgroundColorMain;
+    background: $fontColorMain;
+}
+
+// подсказывающий текст
+::placeholder {
+    color: $placeholderColorMain;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+// input,
+// textarea {
+//     border: $borderColorMain 1px solid;
+//     outline: none;
+//     &:focus:required:invalid {
+//         border-color: #b00020;
+//     }
+//     &:required:valid {
+//         border-color: #28a745;
+//     }
+// }

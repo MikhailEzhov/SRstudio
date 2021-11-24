@@ -1,0 +1,12 @@
+& {
+    transition: all 400ms ease 0s;
+}
+&:hover { //курсор мыши над элементом (hover)
+    transform: translateY(3px);
+    opacity: 0.9;
+    
+}
+&:active { //активный элемент - нажатый
+    transform: scale(0.95, 0.95);
+    opacity: 0.5;
+}
